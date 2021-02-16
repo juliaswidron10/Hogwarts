@@ -5,17 +5,95 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='style.css' rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/eve7zch.css">
     <title>Document</title>
 </head>
 <body>
-    <div id="login">
-        <div class="container">
-            <div><img src="potter_h.png" alt="Illustrated portrait of a student"></div>
-            <div class="student_info">
-                
+   <header>
+       <h1>Hogwarts</h1>
+       <h2>School of Witchcraft and Wizardy</h2>
+   </header>
+   <main>
+       <ol id="heading">
+           <li>Firstame</li>
+           <li>Lastname</li>
+           <li>House <img src="images/arrow.svg" alt="icon of an arrow pointing down"></li>
+       </ol>
+       <div id="filters">
+           <img src="images/search.svg" alt="icon of a magnifing glass">
+           <p>Sort by:</p>
+       </div>
+       <section id="students">
+          
+               <ul>
+                   <li class="firstname">Hermione</li>
+                   <li class="lastname">Grenger</li>
+                   <li class="house">Hogwarts</li>
+               </ul>
+          
+               <ul>
+                <li class="firstname">Hermione</li>
+                <li class="lastname">Grenger</li>
+                <li class="house">Hogwarts</li>
+            </ul>
+
+            <ul>
+                <li class="firstname">Hermione</li>
+                <li class="lastname">Grenger</li>
+                <li class="house">Hogwarts</li>
+            </ul>
+       </section>
+       <img class="hide" src="Background.png" alt="two toned hogwarts building photo, the building is in the background with trees in front">
+   </main>
+
+   <div class="modal hide">
+
+    <section class="studentdata">
+        <img src="images/nott_t.png">
+        <div class="top">
+            <h1 class="housemodal">Gryfindor</h1>
+            <h2>Prefect</h2>
+        </div>
+        <div class="studentinfo">
+            <div class="data-modal">
+                <h1>Full Name:</h1>
+                <h2>Harry James Potter</h2>
+            </div>
+            <div class="data-modal">
+                <h1>Gender:</h1>
+                <h2>Male</h2>
+            </div>
+            <div class="data-modal">
+                <h1>Blood type:</h1>
+                <h2>Pure</h2>
+            </div>
+            <div class="data-modal">
+                <h1>Team:</h1>
+                <h2>none</h2>
             </div>
         </div>
-    </div>
+        <div class="teacher_access">
+            <p>Prefect: YES</p>
+            <p>Expelled: NO</p>
+        </div>
+    </section>
+
+   </div>
+
+   <div class="loginmodal hide">
+       <div class="heading">
+           <h1>Hogwarts</h1>
+           <p>School of Witchcraft and Wizardy</p>
+       </div>
+       <div class="administrator">
+           <form>
+               <label for="username">Username</label>
+               <input type="text" id="username">
+               <label for="password">Password</label>
+               <input type="password" id="password">
+           </form>
+       </div>
+   </div>
 </body>
 <script src="script.js"></script>
 </html>

@@ -57,9 +57,6 @@ function createStudents(student) {
 
             if(firstnameEnd !== lastnameStart){
                 middlename = fullname.substring(firstnameEnd, lastnameStart);
-                middlename = middlename.toLowerCase()
-                middlename = middlename.trim();
-                middlename = middlename.charAt(0).toUpperCase()+middlename.slice(1);
                 if(middlename.includes('"')){
                     nickname = middlename.replace('"', ' ');
                     nickname = nickname.replace('"', ' ');
@@ -81,20 +78,21 @@ function createStudents(student) {
             nickname = '';
         }
 
-        firstname = firstname.toLowerCase();
-        firstname = firstname.charAt(0).toUpperCase()+firstname.slice(1);
-        firstname = firstname.trim();
-        lastname = lastname.toLowerCase();
-        lastname = lastname.trim();
-        lastname = lastname.charAt(0).toUpperCase()+lastname.slice(1);
-        
+
+        function cleanUp(str){
+            str = str.trim();
+            str = str.toLowerCase();
+            str = str.charAt(0).toUpperCase()+str.slice(1);
+            return str;
+        };
+        firstname = cleanUp(firstname);
+        middlename = cleanUp(middlename);
+        lastname = cleanUp(lastname);
+
         console.log(`${firstname} ${lastname} ${middlename} ${nickname}`)
 
         //cleaning up houses
-        house = student.house;
-        house = house.toLowerCase();
-        house = house.trim();
-        house = house.charAt(0).toUpperCase()+house.slice(1);
+        house = cleanUp(student.house);
 
         // creating student objects 
         newStudent.firstname = firstname;
