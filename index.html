@@ -1,106 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='style.css' rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/eve7zch.css">
-    <title>Document</title>
+    <title>Hogwarts School of Witchcraft and Wizardy</title>
 </head>
+
 <body>
-   <header>
-       <h1>Hogwarts</h1>
-       <h2>School of Witchcraft and Wizardy</h2>
-   </header>
-   <main>
-       <ol id="heading">
-           <li>Firstame</li>
-           <li>Lastname</li>
-           <li>House <img src="images/arrow.svg" alt="icon of an arrow pointing down"></li>
-       </ol>
-       <div id="filters">
-           <img src="images/search.svg" alt="icon of a magnifing glass">
-           <p>Sort by:</p>
-       </div>
-       <section id="students">
-          
-               <ul>
-                   <li class="firstname">Hermione</li>
-                   <li class="lastname">Grenger</li>
-                   <li class="house">Hogwarts</li>
-               </ul>
-          
-               <ul>
-                <li class="firstname">Hermione</li>
-                <li class="lastname">Grenger</li>
-                <li class="house">Hogwarts</li>
-            </ul>
+    <header>
+        <h1>Hogwarts</h1>
+        <h2>School of Witchcraft and Wizardy</h2>
+    </header>
+    <main>
+        <div>
+            <div class="headingsecion">
+                <ol id="heading">
+                    <li>Firstame</li>
+                    <li>Lastname</li>
+                    <li class='househeading'>House <img src="images/arrow.svg" alt="icon of an arrow pointing down">
+                    </li>
+                </ol>
+                <ol id="listofhouses" class='hide'>
+                    <li class='listfilter'>Gryffindor</li>
+                    <li class='listfilter'>Hufflepuff</li>
+                    <li class='listfilter'>Ravenclaw</li>
+                    <li class='listfilter'>Slytherin</li>
+                </ol>
+                <div id="filters">
+                    <img src="images/search.svg" alt="icon of a magnifing glass">
+                    <p class='sortbybutton'>Show:</p>
+                </div>
+                <ul class="listofsorting hide" id="listofsorting">
+                    <li class='listofsort'>By Name</li>
+                    <li class='listofsort'>By Lastname</li>
+                    <li class='sortfilter'>Prefects</li>
+                    <li class='sortfilter'>Girls</li>
+                    <li class='sortfilter'>Boys</li>
+                    <li class='sortfilter'>Pure Blood</li>
+                    <li class='sortfilter'>Expelled</li>
+                </ul>
 
-            <ul>
-                <li class="firstname">Hermione</li>
-                <li class="lastname">Grenger</li>
-                <li class="house">Hogwarts</li>
-            </ul>
-       </section>
-       <img class="hide" src="Background.png" alt="two toned hogwarts building photo, the building is in the background with trees in front">
-   </main>
-
-   <div class=" modal hide">
-
-    <section class="studentdata">
-        <img src="images/nott_t.png">
-        <div class="top">
-            <h1 class="housemodal">Gryfindor</h1>
-            <h2>Prefect</h2>
+            </div>
+            <section id="students">
+            </section>
+            <template id="stulist">
+                <ul>
+                    <li class="firstname">Hermione</li>
+                    <li class="lastname">Grenger</li>
+                    <li class="house">Hogwarts</li>
+                </ul>
+            </template>
         </div>
-        <div class="studentinfo">
-            <div class="data-modal">
-                <h1>Full Name:</h1>
-                <h2>Harry James Potter</h2>
-            </div>
-            <div class="data-modal">
-                <h1>Gender:</h1>
-                <h2>Male</h2>
-            </div>
-            <div class="data-modal blood">
-                <h1>Blood type:</h1>
-                <h2>Pure</h2>
-            </div>
-            <div class="data-modal team">
-                <h1>Team:</h1>
-                <h2>none</h2>
-            </div>
-        </div>
-        <div class="teacher_access">
-            <p>Prefect: YES</p>
-            <p>Expelled: NO</p>
-        </div>
-    </section>
+        <img class="hogwartimage" src="Background.png"
+            alt="two toned hogwarts building photo, the building is in the background with trees in front">
+    </main>
 
-   </div>
+    <div id='studentModal' class="hide modal">
+        <div class="backgroundstud">
+            <section class="studentdata">
 
-   <div class="loginmodal">
-       <div class="background">
-       <div class="heading">
-           <h1>Hogwarts</h1>
-           <p>School of Witchcraft and Wizardy</p>
-       </div>
-       <div class="administrator">
-           <h1>Login as administrator</h1>
-           <form>
-               <label for="username">Username</label>
-               <input placeholder="Username" type="text" id="username">
-               <label for="password">Password</label>
-               <input placeholder="Password" type="password" id="password">
-           </form>
-       </div>
-       <div class="studen_login">
-           <h1>- Or -</h1>
-           <p>Continue as a student</p>
-       </div>
+                <img src="images/nott_t.png">
+                <div class="top">
+                    <h1 class="housemodal">Gryfindor</h1>
+                    <h2 class="isprefect">Prefect</h2>
+                </div>
+                <div class="studentinfo">
+                    <div class="data-modal">
+                        <h1>Full Name:</h1>
+                        <h2 class="modalfirstname">Harry James Potter</h2>
+                    </div>
+                    <div class="data-modal">
+                        <h1>Gender:</h1>
+                        <h2 class='modalgender'>Male</h2>
+                    </div>
+                    <div class="data-modal blood">
+                        <h1>Blood type:</h1>
+                        <h2>Pure</h2>
+                    </div>
+                    <div class="data-modal team">
+                        <h1>Team:</h1>
+                        <h2>none</h2>
+                    </div>
+                </div>
+                <div class="teacher_access">
+                    <p>Prefect: YES</p>
+                    <p>Expelled: NO</p>
+                </div>
+            </section>
+        </div>
     </div>
-   </div>
+
+    <div id='loginpopup' class="loginmodal">
+        <div class="background">
+            <div class="heading">
+                <h1>Hogwarts</h1>
+                <p>School of Witchcraft and Wizardy</p>
+            </div>
+            <div class="administrator">
+                <h1>Login as administrator</h1>
+                <form id="loginpassword" onsubmit="validatePassword()">
+                    <label for="username">Username</label>
+                    <input placeholder="Username" type="text" id="username">
+                    <label for="password">Password</label>
+                    <input placeholder="Password" type="password" id="password">
+                    <button>Login</button>
+                </form>
+            </div>
+            <div class="studen_login">
+                <h1>- Or -</h1>
+                <p>Continue as a student</p>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="script.js"></script>
+
 </html>

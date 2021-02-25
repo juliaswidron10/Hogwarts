@@ -17,11 +17,14 @@ body{
     font-weight: 100;
     font-size: 18px;
 }
+.hogwartimage{
+    display: none;
+}
 img{
     width: 100%;
     height: 100%;
 }
-.hide{
+.hide, .loginmodal.hide , #listofhouses.hide , #listofsorting.hide{
     display: none;
 }
 header > h1 , .heading > h1{
@@ -56,6 +59,7 @@ ol#heading > li img{
    top: 0.4rem;
    padding: 5px;
    position: relative;
+   transform: rotate(270deg);
 }
 div#filters{
     height: 2rem;
@@ -88,6 +92,7 @@ section#students > ul{
     width: 100%;
     margin: 0;
     padding: 0 0 1rem 0;
+    cursor: pointer;
 
 }
 li.firstname{
@@ -110,8 +115,35 @@ li.house{
     text-align: right;
 }
 
+#listofhouses{
+    list-style-type: none;
+    justify-content: space-around;
+    
+}
+#listofsorting{
+    list-style-type: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 0;
+}
+
+#listofhouses > li , .listofsorting > li {
+    text-align: center;
+    margin: 0.5rem 1rem;
+    padding: 5px;
+    cursor: pointer;
+    color:var(--gryfindor-color);
+    font-weight: 300;
+    border-radius: 2rem;
+    border: solid var(--gryfindor-color) 2px;
+    width: 130px;
+
+}
+
 /*Styling modal*/
-div.modal{
+.studentdata{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     background-color: var(--medium-gray);
     position: fixed;
     z-index: 10;
@@ -119,11 +151,6 @@ div.modal{
     color:var(--main-color);
     width: 100%;
     overflow: scroll;
-}
-.studentdata{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    
 }
 .studentdata > img{
     height: auto;
@@ -196,7 +223,7 @@ div.teacher_access > p{
 }
 
 /* Styling login modal*/
-.loginmodal{
+.loginmodal, .backgroundstud{
     position: fixed;
     z-index: 10;
     top: 0;
@@ -222,7 +249,7 @@ div.teacher_access > p{
 form{
     display: grid;
     grid-column: 1fr;
-    padding: 2rem;
+    padding: 2rem 2rem 0 2rem ;
 }
 
 label{
@@ -238,10 +265,129 @@ input{
     border: none;
     font-size: 1rem;
 }
+#loginpassword > button {
+    width: 40%;
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+    margin-top: 2rem;
+    border: none;
+    border-radius: 2rem;
+    padding: 5px;
+    font-size: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
 div.studen_login{
     text-align: center;
 }
 div.studen_login > p {
     font-size: 2rem;
     padding: 0 2rem 2rem 2rem;
+}
+div.studen_login > p:hover{
+    text-decoration: underline;
+}
+
+@media only screen and (min-width: 370px){
+    section#students > ul{
+        display: flex;
+        justify-content: space-between;
+    }
+    section#students > ul > li.house{
+        font-size: 2rem;
+    }
+
+}
+@media only screen and (min-width: 600px){
+    #listofhouses{
+        list-style-type: none;
+        display: flex;
+        justify-content: space-around;
+        
+    }
+    #listofsorting{
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .loginmodal{
+        display: grid;
+        justify-items: center;
+    }
+    .loginmodal > .background {
+        max-width: 450px;
+    }
+    section#students > ul{
+        display: flex;
+        justify-content: space-between;
+    }
+    section#students > ul > li.house{
+        font-size: 2rem;
+    }
+
+    section.studentdata > img{
+        grid-area: 1 / 1 / span 4/ span 1;
+    }
+    section.studentdata > div.top{
+        grid-area: 1 / 2 / span 1/ span 1;
+    }
+    section.studentdata > div.studentinfo{
+        grid-area: 2 / 2 / span 3 / span 1;
+    }
+}
+
+@media only screen and (min-width: 800px){
+    .hogwartimage{
+        max-width: 40vw;
+        width: auto;
+        object-fit: cover;
+        display: inline;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        z-index: 0;
+        right: 0rem;
+    }
+    main{
+        display: flex;
+    }
+    main > div {
+        width: 55vw;
+    }
+    section.studentdata{
+        width: 60vw;
+        height: auto;
+        z-index: 10;
+        position: relative;
+        right: 40px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* .headingsecion{
+        position: fixed;
+        width: 55vw;
+        background-color: var(--main-color);
+        top: 7rem;
+    }
+    header{
+        position: fixed;
+        background-color: var(--main-color);
+        top:0
+    } */
+    section#students{
+        overflow-y: scroll;
+        height: 70vh;
+    }
+}
+
+@media only screen and (min-width: 1300px){
+    .hogwartimage{
+        max-width: 50vw;
+    }
+    main > div {
+        width: 55vw;
+    }
+   
 }
