@@ -24,7 +24,7 @@ img{
     width: 100%;
     height: 100%;
 }
-.hide, .loginmodal.hide , #listofhouses.hide , #listofsorting.hide{
+.hide, .loginmodal.hide , #listofhouses.hide , #listofsorting.hide, #teacherOptions.hide{
     display: none;
 }
 header > h1 , .heading > h1{
@@ -211,11 +211,13 @@ div.teacher_access{
     grid-column: span 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    
 }
 div.teacher_access{
     justify-content: space-around;
     padding: 0 1rem 1rem 1rem;
     text-align: center;
+    z-index: 30;
 }
 div.teacher_access > p{
     font-weight: 500;
@@ -286,6 +288,10 @@ div.studen_login > p {
 }
 div.studen_login > p:hover{
     text-decoration: underline;
+}
+footer{ 
+    width: 45vw;
+    padding: 2rem;
 }
 
 @media only screen and (min-width: 370px){
