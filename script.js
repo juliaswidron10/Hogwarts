@@ -28,7 +28,7 @@ function start() {
     form.addEventListener("submit", validatePassword);
     document.querySelector('#searchstudent').addEventListener('keyup', filterStudents);
 
-    filterhouse.addEventListener('click', e => {
+    filterh ouse.addEventListener('click', e => {
         document.querySelector('#listofhouses').classList.toggle('hide');
         document.querySelectorAll(".listfilter").forEach(e => {
             e.addEventListener('click', function () {
